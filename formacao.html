@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- ===== METADADOS ===== -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="Daniel Araújo"/>
+    <meta name="keywords" content="SIG, WebSIG, ordenamento do território, mobilidade urbana, transportes públicos, análise espacial, FLUP"/>
+    <meta name="description" content="Formação académica de Daniel Araújo."/>
+    <title>Daniel Araújo | Formação</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"/>
+    <!-- Bootstrap 5 (CSS) - carregado antes do style.css para o nosso CSS ter prioridade -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+
+    <!-- Ligação à folha de estilos externa -->
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body id="topo">
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header id="cabecalho">
+        <div class="contentor">
+            <a href="index.html" id="logo">Daniel Araújo</a>
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="formacao.html" class="ativo">Formação</a></li>
+                    <li><a href="competencias.html">Competências</a></li>
+                    <li><a href="experiencia.html">Experiência</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== TÍTULO DA PÁGINA ===== -->
+    <section class="banner">
+        <div class="contentor">
+            <h1>Formação Académica</h1>
+            <p>FLUP – Faculdade de Letras da Universidade do Porto</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <section class="seccao">
+        <div class="contentor">
+
+            <!-- O mais recente aparece primeiro -->
+            <article class="item">
+                <img src="flup-logo.png" class="logo-flup" width="150" height="52" alt="Logótipo da FLUP"/>
+                <p class="data">2025 – presente</p>
+                <h2>Mestrado em Sistemas de Informação Geográfica e Ordenamento do Território</h2>
+                <p class="instituicao">Faculdade de Letras da Universidade do Porto</p>
+                <p>
+                    Formação avançada em SIG, análise espacial e ordenamento do território,
+                    incluindo a unidade curricular de Aplicações em WebSIG.
+                </p>
+                <p>Algumas unidades curriculares:</p>
+                <ul>
+                    <li>Aquisição e Edição de Dados Geográficos</li>
+                    <li>Cartografia e Sistemas de Informação Geográfica</li>
+                    <li>Programação SIG e OT</li>
+                </ul>
+            </article>
+
+            <article class="item">
+                <img src="flup-logo.png" class="logo-flup" width="150" height="52" alt="Logótipo da FLUP"/>
+                <p class="data">2022 – 2025</p>
+                <h2>Licenciatura em Geografia</h2>
+                <p class="instituicao">Faculdade de Letras da Universidade do Porto</p>
+            </article>
+
+            <!-- Onde estudo: fotografia e mapa da localização da FLUP -->
+            <h2 class="titulo-tabela">Onde estudo</h2>
+            <figure class="figura">
+                <iframe id="mapa-flup" title="Mapa da localização da Faculdade de Letras da Universidade do Porto"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-8.6385%2C41.1485%2C-8.6265%2C41.1540&amp;layer=mapnik&amp;marker=41.15106%2C-8.63257"></iframe>
+                <figcaption>Localização da FLUP: Via Panorâmica, s/n, 4150-564 Porto.</figcaption>
+            </figure>
+
+            <!-- Tabela resumo (classes do Bootstrap: .table e .table-striped; .table-responsive permite deslizar em ecrãs pequenos) -->
+            <h2 class="titulo-tabela">Resumo</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                        <tr>
+                            <th>Grau</th>
+                            <th>Curso</th>
+                            <th>Período</th>
+                        </tr>
+                        <tr>
+                            <td>Licenciatura</td>
+                            <td>Geografia</td>
+                            <td>2022 – 2025</td>
+                        </tr>
+                        <tr>
+                            <td>Mestrado</td>
+                            <td>Sistemas de Informação Geográfica e Ordenamento do Território</td>
+                            <td>2025 – presente</td>
+                        </tr>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <!-- Ligação fixa para voltar ao topo da página -->
+    <a href="#topo" id="voltar-topo">&uarr; Topo</a>
+
+    <footer id="rodape">
+        <p>daniel.leca.araujo@gmail.com</p>
+    </footer>
+
+</body>
+</html>

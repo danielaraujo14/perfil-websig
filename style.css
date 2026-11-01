@@ -1,0 +1,484 @@
+/* =========================================================
+   style.css — Perfil pessoal de Daniel Araújo
+   Aplicações em WebSIG · Mestrado SIG e OT · FLUP
+
+   Folha de estilos externa, partilhada por todas as páginas.
+
+   Paleta de cores usada:
+   #0b3a75  azul escuro  (títulos, nome, rodapé)
+   #1565c0  azul         (destaques, botões, faixas)
+   #eaf2fc  azul claro   (fundos suaves)
+   #d3e3f7  azul suave   (contornos)
+   #ffffff  branco       (fundo principal)
+   #1f2a37  quase preto  (texto)
+   #5b6675  cinzento     (texto secundário)
+
+   Índice:
+   1. Regras gerais
+   2. Contentor (largura e centragem)
+   3. Cabeçalho e menu
+   4. Apresentação (página Início)
+   5. Botões
+   6. Faixa de título das páginas
+   7. Secções e títulos
+   8. Caixas e itens (Formação, Experiência, Competências)
+   9. Rodapé
+   9b. Extras (pseudo-elementos, seletores avançados, position fixed)
+   10. Design responsivo (media queries)
+
+   Nota: o Bootstrap 5 é carregado antes deste ficheiro (grelha e tabelas).
+   ========================================================= */
+
+
+/* ---------- 1. REGRAS GERAIS ---------- */
+body {
+    margin: 0px;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1f2a37;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+    color: #0b3a75;
+    margin-top: 0px;
+    font-weight: 700; /* o Bootstrap reduz o peso dos títulos, aqui repomos */
+}
+
+a {
+    color: #1565c0;
+}
+
+/* Pseudo-classes de ligações, por esta ordem: link, visited, hover/focus, active */
+a:visited {
+    color: #0b3a75;
+}
+
+a:hover,
+a:focus {
+    color: #0b3a75;
+}
+
+a:active {
+    color: #5b6675;
+}
+
+
+/* ---------- 2. CONTENTOR ----------
+   Limita a largura do conteúdo e centra-o na página
+   (como o #base dos slides: margin-left e margin-right em auto) */
+.contentor {
+    width: 90%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ---------- 3. CABEÇALHO E MENU ---------- */
+#cabecalho {
+    background-color: #ffffff;
+    border-bottom: 3px solid #1565c0;
+}
+
+/* "position: relative" permite posicionar o logótipo e o menu lá dentro */
+#cabecalho .contentor {
+    position: relative;
+    height: 75px;
+}
+
+/* Nome à esquerda */
+#logo {
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0b3a75;
+    text-decoration: none;
+}
+
+/* Menu à direita */
+#menu {
+    position: absolute;
+    top: 18px;
+    right: 0px;
+}
+
+#menu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+/* Os itens do menu ficam lado a lado */
+#menu ul li {
+    float: left;
+    margin-left: 6px;
+}
+
+/* Cada link do menu tem aspeto de botão */
+#menu ul li a {
+    display: block;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 1px solid #d3e3f7;
+    color: #0b3a75;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#menu ul li a:hover {
+    background-color: #eaf2fc;
+}
+
+/* Botão da página atual (classe "ativo" no HTML) */
+#menu ul li a.ativo {
+    background-color: #1565c0;
+    border: 1px solid #1565c0;
+    color: #ffffff;
+}
+
+
+/* ---------- 4. APRESENTAÇÃO (página Início) ---------- */
+#apresentacao {
+    background-color: #eaf2fc;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+.etiqueta {
+    margin: 0px;
+    color: #1565c0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#apresentacao h1 {
+    font-size: 2.8rem;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #5b6675;
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+
+.localizacao {
+    color: #5b6675;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 28px;
+}
+
+
+/* ---------- 5. BOTÕES ---------- */
+.botao {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: 8px;
+    border: 2px solid #1565c0;
+    background-color: #1565c0;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Os botões mantêm sempre a cor do texto (mesmo depois de visitados ou clicados) */
+.botao:visited,
+.botao:active {
+    color: #ffffff;
+}
+
+.botao-secundario:visited,
+.botao-secundario:active {
+    color: #1565c0;
+}
+
+.botao:hover {
+    background-color: #0b3a75;
+    border: 2px solid #0b3a75;
+    color: #ffffff;
+}
+
+/* Variante: botão branco com contorno azul */
+.botao-secundario {
+    background-color: #ffffff;
+    color: #1565c0;
+}
+
+.botao-secundario:hover {
+    background-color: #ffffff;
+    color: #0b3a75;
+}
+
+
+/* ---------- 6. FAIXA DE TÍTULO DAS PÁGINAS ---------- */
+.banner {
+    background-color: #1565c0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.banner h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 4px;
+}
+
+.banner p {
+    color: #ffffff;
+    margin: 0px;
+}
+
+
+/* ---------- 7. SECÇÕES E TÍTULOS ---------- */
+.seccao {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    min-height: 400px; /* evita que o rodapé suba demasiado em páginas curtas */
+}
+
+.seccao p {
+    max-width: 760px;
+}
+
+/* Título com uma linha azul por baixo */
+.seccao h2 {
+    font-size: 1.6rem;
+}
+
+#apresentacao + .seccao h2 {
+    padding-bottom: 8px;
+    border-bottom: 3px solid #1565c0;
+    max-width: 760px;
+}
+
+.seccao h3 {
+    font-size: 1.3rem;
+    margin-top: 40px;
+}
+
+
+/* ---------- 8. CAIXAS E ITENS ---------- */
+
+/* Caixa com contorno e barra azul do lado esquerdo
+   (Áreas de interesse e Competências) */
+.caixa {
+    border: 1px solid #d3e3f7;
+    border-left: 5px solid #1565c0;
+    background-color: #ffffff;
+    padding: 18px 24px;
+    margin-bottom: 16px;
+}
+
+.caixa h2,
+.caixa h4 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.caixa p {
+    margin: 0px;
+    color: #5b6675;
+}
+
+.caixa ul,
+.caixa ol {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+.caixa ul {
+    list-style-type: square;
+}
+
+.caixa ol {
+    list-style-type: decimal;
+}
+
+.caixa li {
+    margin-bottom: 4px;
+}
+
+/* Item de Formação e Experiência: linha azul à esquerda, como uma linha do tempo */
+.item {
+    border-left: 3px solid #1565c0;
+    padding-left: 24px;
+    margin-bottom: 36px;
+}
+
+.item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.item p {
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+/* Datas em letra pequena, maiúsculas e azul */
+.data {
+    color: #1565c0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instituicao {
+    color: #5b6675;
+    font-weight: 600;
+}
+
+
+
+/* ---------- 9. RODAPÉ ---------- */
+#rodape {
+    background-color: #0b3a75;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#rodape p {
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+
+/* ---------- 9b. EXTRAS ---------- */
+
+/* Ligações externas (atributo href começa por "http") ganham uma seta */
+.item a[href^="http"]::after {
+    content: " \2197";
+}
+
+/* Título da tabela da página Formação */
+.titulo-tabela {
+    margin-top: 50px;
+}
+
+/* Logótipo da FLUP ao lado de cada item da Formação (float: right) */
+.logo-flup {
+    float: right;
+    margin-left: 20px;
+}
+
+/* Mapa da FLUP */
+.figura {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+}
+
+.figura figcaption {
+    font-size: 0.85rem;
+    color: #5b6675;
+}
+
+#mapa-flup {
+    width: 100%;
+    height: 350px;
+    border: 1px solid #d3e3f7;
+}
+
+/* Caixas lado a lado com a mesma altura (height: 100%) e tabela sem margem inferior dentro das caixas */
+.row .caixa {
+    height: 100%;
+}
+
+.caixa .table {
+    margin-bottom: 0px;
+}
+
+/* Primeiro item do menu sem margem (first-child) */
+#menu ul li:first-child {
+    margin-left: 0px;
+}
+
+/* Ligação fixa no canto do ecrã para voltar ao topo (position: fixed) */
+#voltar-topo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 0.5em 1em;
+    background-color: #1565c0;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#voltar-topo:hover,
+#voltar-topo:visited {
+    background-color: #0b3a75;
+    color: #ffffff;
+}
+
+
+/* ---------- 10. DESIGN RESPONSIVO ----------
+   Estas regras só se aplicam quando o ecrã tem 800px ou menos */
+@media (max-width: 800px) {
+
+    /* Cabeçalho: nome e menu deixam de estar posicionados e ficam um por baixo do outro */
+    #cabecalho .contentor {
+        height: auto;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    #logo,
+    #menu {
+        position: static;
+    }
+
+    #logo {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Botões do menu em coluna */
+    #menu ul li {
+        float: none;
+        margin-left: 0px;
+        margin-bottom: 6px;
+    }
+
+    /* Logótipo da FLUP por cima do texto */
+    .logo-flup {
+        float: none;
+        display: block;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+
+    #apresentacao h1 {
+        font-size: 2.1rem;
+    }
+
+    .botao {
+        display: block;
+        text-align: center;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    .banner h1 {
+        font-size: 1.6rem;
+    }
+}
